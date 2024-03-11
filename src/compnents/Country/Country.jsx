@@ -10,7 +10,7 @@ const Country = ({ country, handleVisitedCountries }) => {
     setVisited(!visited);
   };
 
-//   console.log(handleVisitedCountries);
+//   console.log(handleRemoveVisitedCountries);
 
   return (
     <div className={`country ${visited && "visited"}`}>

@@ -13,11 +13,21 @@ const Countries = () => {
   }, []);
 
   const handleVisitedCountries = (country) => {
-    console.log("add to the visited country");
-    const newVisitedCountries = [...visitedCountries, country];
-    setVisitedCountries(newVisitedCountries);
+    
+    //checks if country already exists, then delete it or add it
+    if(visitedCountries.includes(country)){
+      const newVisitedCountries = visitedCountries.filter(removeCoutry => removeCoutry.name !== country.name);
+      setVisitedCountries(newVisitedCountries);
+      // Here, visitedCountries.filter(removeCoutry => removeCoutry.name !== country.name) means “create an array that consists ( .include returns TRUE or FALSE ) of those country whose names are different from country.name”. In other words, each country’s button will filter that country out of the array, and then request a re-render with the resulting array. Note that filter does not modify the original array.
+    }
+    else {
+      const newVisitedCountries = [...visitedCountries, country];
+      setVisitedCountries(newVisitedCountries);
+    }
+    
   };
 
+  
   return (
     <div>
       <h3>Countries: {countries.length}</h3>
