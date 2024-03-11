@@ -4,12 +4,22 @@
   gap: 10px;
 }
 
+.img-height {
+  height: 120px;
+  width: 200px;
+}
+
 .visited {
   background-color: bisque;
   color: black;
 }
 
-.img-height {
-    height: 120px;
-    width: 200px;
+.visited-flag {
+  height: 40px;
+  width: 60px;
+}
+
+.visited-countries-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }
